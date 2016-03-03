@@ -48,7 +48,7 @@ Animation* AnimationUtils::BoneAnimationFromAction(Action* action, Armature* arm
             if (armature->joints.array[j].name == channel->boneName)
                 break;
 
-        mini3d_assert((j < armature->joints.count), "Can't find transform index for bone %s and action %s on armature %s", channel->boneName, action->name, armature->name);
+        //mini3d_assert((j < armature->joints.count), "Can't find transform index for bone %s and action %s on armature %s", channel->boneName, action->name, armature->name);
 
         switch (channel->type) 
         {

@@ -7,9 +7,9 @@
 #ifndef MINI3D_UTILS_ANIMATIONUTILS_H
 #define MINI3D_UTILS_ANIMATIONUTILS_H
 
-#include "../mini3d/animation.hpp"
-#include "../mini3d/import.hpp"
-#include "../mini3d/math.hpp"
+#include "../animation.hpp"
+#include "../import.hpp"
+#include "../math.hpp"
 
 using namespace mini3d::import;
 using namespace mini3d::animation;

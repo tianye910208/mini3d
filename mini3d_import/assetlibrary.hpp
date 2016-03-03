@@ -24,16 +24,16 @@ const unsigned int NO_BONE_PARENT = 0xffff;
 template <typename T> 
 struct AutoArray
 {
-    ~AutoArray()                                                        { delete[] array; }
-
     T* array; 
     unsigned int count; 
+
+    ~AutoArray()                                                        { delete[] array; }
 };
 
 template <typename T> 
 struct AutoObjectArray : AutoArray<T>
 {
-    ~AutoObjectArray()                                                  { for (unsigned int i = 0; i < count; ++i) (array + i)->~T(); }
+    ~AutoObjectArray()                                                  { for (unsigned int i = 0; i < AutoArray<T>::count; ++i) (AutoArray<T>::array + i)->~T(); }
 };
 
 struct AutoString : AutoArray<char>
@@ -56,7 +56,7 @@ struct NamedResource
 template <typename T> 
 struct AssetArray : AutoObjectArray<T>
 { 
-    T* Find(const char* name)                                           { return (T*) bsearch(name, array, count, sizeof(T), &cmp); }
+    T* Find(const char* name)                                           { return (T*) bsearch(name, AutoObjectArray<T>::array, AutoObjectArray<T>::count, sizeof(T), &cmp); }
     static int cmp(const void* a, const void* b)                        { return strcmp((const char*)a, ((NamedResource*)b)->name.array); }
 };
 

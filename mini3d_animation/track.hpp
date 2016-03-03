@@ -30,6 +30,7 @@ private:
 
 
 private:
+    bool m_normalize;
     T* pTarget;
     Keyframe<T>* kf;
     unsigned int count;

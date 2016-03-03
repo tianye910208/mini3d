@@ -8,8 +8,8 @@
 #define MINI3D_MATH_H
 
 #include "mini3d_math/quat.hpp"
-#include "mini3d_math/Vec3.hpp"
-#include "mini3d_math/Vec4.hpp"
+#include "mini3d_math/vec3.hpp"
+#include "mini3d_math/vec4.hpp"
 #include "mini3d_math/transform.hpp"
 
 #endif
